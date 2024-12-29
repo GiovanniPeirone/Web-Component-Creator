@@ -1,0 +1,53 @@
+{
+    "page-01": {
+        "header": {
+            "Component":{
+                "Component": "GiPe_Header_01",
+                "Bakendconection": {
+                    "url": "http://localhost:3000",
+                    "method": "GET",
+                    "headers": {
+                        "Content-Type": "application/json"
+                    }
+                },
+                "Script": {
+                    "url": ""
+                }
+
+                
+            }
+        },
+        "Main-Page-01":{
+            "Component": {
+                "Component": "GiPe_Main_01",
+                "Bakendconection": {
+                    "url": "http://localhost:3000",
+                    "method": "GET",
+                    "headers": {
+                        "Content-Type": "application/json"
+                    }
+                },
+                "Script": {
+                    "url": ""
+                }
+            }
+        },    
+        "footer": {
+            "Component":{
+                "Component": "GiPe_Footer_01",
+                "Bakendconection": {
+                    "url": "http://localhost:3000",
+                    "method": "GET",
+                    "headers": {
+                        "Content-Type": "application/json"
+                    }
+                },
+                "Script": {
+                    "url": ""
+                }
+
+                
+            }
+        }
+    }
+}
