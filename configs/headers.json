@@ -1,3 +1,7 @@
 {
-    
+    "GP_Header_01":{
+        "IndexHTML": "index.html",
+        "Styels": "styles.css",
+        "Directory": "Components/Headers/GP_Header_01"
+    }
 }
