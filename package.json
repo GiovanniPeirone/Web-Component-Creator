@@ -1,0 +1,19 @@
+{
+  "name": "web-component-creator",
+  "version": "1.0.0",
+  "description": "WCC is a tool to create web pages with a json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GiovanniPeirone/Web-Component-Creator.git"
+  },
+  "author": "Giovanni Peirone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GiovanniPeirone/Web-Component-Creator/issues"
+  },
+  "homepage": "https://github.com/GiovanniPeirone/Web-Component-Creator#readme"
+}
