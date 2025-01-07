@@ -13,3 +13,5 @@ const projectFolder = path.join(__dirname, "Project")
 
 console.log(projectFolder);
 
+
+//projectFolder.exec()
