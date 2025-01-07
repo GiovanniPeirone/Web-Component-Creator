@@ -1,21 +1,13 @@
-const Comands = require("./Comands")
+const Comands = require("./comands")
 
 
-
-
-const CreateAngularProject = [
-    "ng version",
-    "ng new PaginaAngular"
-]
-
-
-function CreateAngularProject(Comands){
-    if (comandos.length === 0) {
+function CreateAngularProject(comands){
+    if (comands.length === 0) {
         console.log("Todos los comandos se ejecutaron con éxito.");
         return;
     }
     
-    console.log(`Ejecutando: ${comando}`);
+    console.log(`Ejecutando: ${comands}`);
         
     exec(comando, {cwd: "test"}, (error, stdout, stderr) => {
 
