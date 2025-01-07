@@ -5,13 +5,10 @@ const AnguarProject = require("./Angular");
 
 
 const CreateReactProject = [
-    
-]
-
-const CreateAngularProject = [
     "ng new PaginaAngular"
-
 ]
+
+
 
 // Función para ejecutar comandos secuencialmente
 function ejecutarComandos(comandos) {
@@ -31,3 +28,5 @@ function ejecutarComandos(comandos) {
 
 // Ejecutar los comandos
 ejecutarComandos([...CreateAngularProject]); // Clonar la lista para evitar modificarla
+
+//https://github.com/GiovanniPeirone/Web-Component-Creator/blob/main/configs/Components/Footers/GP_Footer_01/index.html
