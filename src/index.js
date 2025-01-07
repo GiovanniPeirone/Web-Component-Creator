@@ -1,17 +1,33 @@
 const { exec } = require("child_process");
 const path = require("path");
 
+const AnguarProject = require("./Angular");
+
+
 const CreateReactProject = [
-    ""
+    
 ]
 
 const CreateAngularProject = [
+    "ng new PaginaAngular"
 
 ]
 
-const projectFolder = path.join(__dirname, "Project")
+// Función para ejecutar comandos secuencialmente
+function ejecutarComandos(comandos) {
+    if (comandos.length === 0) {
+      console.log("Todos los comandos se ejecutaron con éxito.");
+      return;
+    }
+  
+    const comando = comandos.shift(); // Obtén el primer comando
+    console.log(`Ejecutando: ${comando}`);
+  
+    exec(comando, {cwd: "test"}, (error, stdout, stderr) => {
+      console.log(`Resultado de ${comando}:\n${stdout}`);
+      ejecutarComandos(comandos); // Ejecuta el siguiente comando
+    });
+}
 
-console.log(projectFolder);
-
-
-//projectFolder.exec()
+// Ejecutar los comandos
+ejecutarComandos([...CreateAngularProject]); // Clonar la lista para evitar modificarla
