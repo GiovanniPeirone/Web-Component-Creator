@@ -1,2 +1,2 @@
 # Web-Component-Creator
-Golang Cli to create Web Pages
+Cli to create Web Pages
