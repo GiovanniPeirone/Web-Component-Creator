@@ -1,8 +1,14 @@
-const { exec } = require("child_process");
-const path = require("path");
 
+const { Command } = require('commander');
+const program = new Command();
 
-const AnguarProject = require("./Angular");
+const path = require('path')
+
+const testFolder = require('../test/project.json')
+
+const { CreateWebPage } = require('./app.js')
+
+//const AnguarProject = require("./Angular");
 
 
 const CreateReactProject = [
@@ -10,24 +16,40 @@ const CreateReactProject = [
 ]
 
 
+program
+  .name('wcc')
+  .description('Verify that you have Angular Updated or installed in the latest version')
+  .version('1.0.0');
 
-// Función para ejecutar comandos secuencialmente
-function ejecutarComandos(comandos) {
-    if (comandos.length === 0) {
-      console.log("Todos los comandos se ejecutaron con éxito.");
-      return;
-    }
+
+program
+  .command('create <jsonFile>')
+  .description('crete the web page reading the json file')
+  .action((jsonFile) => {
+    CreateWebPage(testFolder)
+  })
+
+program
+  .command('createtest')
+  .description('--test Folder')
+  .action((jsonFile) => {
+    CreateWebPage(testFolder)
+  })
   
-    const comando = comandos.shift(); // Obtén el primer comando
-    console.log(`Ejecutando: ${comando}`);
-  
-    exec(comando, {cwd: "test"}, (error, stdout, stderr) => {
-      console.log(`Resultado de ${comando}:\n${stdout}`);
-      ejecutarComandos(comandos); // Ejecuta el siguiente comando
-    });
-}
 
-// Ejecutar los comandos
-ejecutarComandos([...CreateAngularProject]); // Clonar la lista para evitar modificarla
+program
+  .command('saludar <nombre>')
+  .description('Saluda a alguien')
+  .action((nombre) => {
+    console.log(`¡Hola, ${nombre}!`);
+  });
 
-//https://github.com/GiovanniPeirone/Web-Component-Creator/blob/main/configs/Components/Footers/GP_Footer_01/index.html
+program
+  .command('despedir [nombre]')
+  .description('Despedirse de alguien')
+  .action((nombre = 'amigo') => {
+    console.log(`¡Adiós, ${nombre}!`);
+  });
+
+program.parse();
+

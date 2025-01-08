@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GiovanniPeirone/Web-Component-Creator/issues"
   },
-  "homepage": "https://github.com/GiovanniPeirone/Web-Component-Creator#readme"
+  "homepage": "https://github.com/GiovanniPeirone/Web-Component-Creator#readme",
+  "dependencies": {
+    "commander": "^13.0.0"
+  }
 }
