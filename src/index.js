@@ -8,8 +8,6 @@ const testFolder = require('../test/project.json')
 
 const { CreateWebPage } = require('./app.js')
 
-//const AnguarProject = require("./Angular");
-
 
 const CreateReactProject = [
     "ng new PaginaAngular"
@@ -26,30 +24,14 @@ program
   .command('create <jsonFile>')
   .description('crete the web page reading the json file')
   .action((jsonFile) => {
-    CreateWebPage(testFolder)
+    CreateWebPage(jsonFile)
   })
 
 program
   .command('createtest')
   .description('--test Folder')
-  .action((jsonFile) => {
+  .action((/*jsonFile*/) => {
     CreateWebPage(testFolder)
   })
-  
-
-program
-  .command('saludar <nombre>')
-  .description('Saluda a alguien')
-  .action((nombre) => {
-    console.log(`¡Hola, ${nombre}!`);
-  });
-
-program
-  .command('despedir [nombre]')
-  .description('Despedirse de alguien')
-  .action((nombre = 'amigo') => {
-    console.log(`¡Adiós, ${nombre}!`);
-  });
-
 program.parse();
 

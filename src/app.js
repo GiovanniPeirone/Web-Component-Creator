@@ -1,36 +1,31 @@
-const { exec } = require("child_process");
 const path = require("path");
+const readline =  require("readline")
+const AnguarProject = require("./Angular-19/CreateAppAngular-19");
 
-
+const { CreateAngularProject } = require("./Angular-19/CreateAppAngular-19")
 
 function CreateWebPage(jsonFile){
-    console.log("hola mundo")
-}
+  console.log("What technology do you prefer?")    
+  
+  console.log("1 - Angular 19")
+  console.log("2 -React vite ")
+  // Crear la interfaz de readline
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
 
-/*
-// Función para ejecutar comandos secuencialmente
-function ejecutarComandos(comandos) {
-    if (comandos.length === 0) {
-      console.log("Todos los comandos se ejecutaron con éxito.");
-      return;
+  // Preguntar al usuario
+  rl.question('> ', (technology) => {
+    if (technology <= 1){
+      CreateAngularProject()
     }
+    // Cerrar la interfaz
+    rl.close();
+  });
   
-    const comando = comandos.shift(); // Obtén el primer comando
-    console.log(`Ejecutando: ${comando}`);
-  
-    exec(comando, {cwd: "test"}, (error, stdout, stderr) => {
-      console.log(`Resultado de ${comando}:\n${stdout}`);
-      ejecutarComandos(comandos); // Ejecuta el siguiente comando
-    });
 }
-
-// Ejecutar los comandos
-ejecutarComandos([...CreateAngularProject]); // Clonar la lista para evitar modificarla
-
-//https://github.com/GiovanniPeirone/Web-Component-Creator/blob/main/configs/Components/Footers/GP_Footer_01/index.html
-*/
 
 module.exports = {
     CreateWebPage
-
 }
