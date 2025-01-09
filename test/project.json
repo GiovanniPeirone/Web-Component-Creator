@@ -1,7 +1,12 @@
 {
-    "page-01": {
-        "Main": "GP_Main_01",
-        "Header": "GP_Header_01",
-        "Footer": "GP_Footer_01"
+    "WEB":{
+        "name" : "PaginaAngular",
+    
+        "page-01": {
+            "Main": "GP_Main_01",
+            "Header": "GP_Header_01",
+            "Footer": "GP_Footer_01"
+        }
+
     }
 }
