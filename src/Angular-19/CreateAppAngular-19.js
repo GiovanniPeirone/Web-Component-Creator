@@ -1,4 +1,6 @@
 const { exec } = require("child_process");
+const path = require("path")
+const fs = require('fs')
 
 function ejecutarComandosSecuenciales(comandos, cwd = process.cwd()) {
     if (comandos.length === 0) {
@@ -27,13 +29,29 @@ function ejecutarComandosSecuenciales(comandos, cwd = process.cwd()) {
 }
 
 function CreateAngularProject() {
+
+  
+
+    const projectName = () => {
+        try {
+            const filePath = path.join(__dirname, "test", "project.json") 
+            const data = fs.readFile(filePath, 'utf8');
+            console.log('Contenido del archivo:', data);
+        } catch (err) {
+            console.error('Error al leer el archivo:', err);
+        }
+    };
+
     const comandos = [
         "ng version", // Verifica la versión de Angular CLI
-        "ng new PaginaAngular --skip-install" // Crea un nuevo proyecto de Angular
+        $`ng new `, projectName` -skip-install` // Crea un nuevo proyecto de Angular
     ];
 
     ejecutarComandosSecuenciales(comandos, 'test');
 }
+
+
+
 
 module.exports = {
     CreateAngularProject
